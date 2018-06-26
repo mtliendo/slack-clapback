@@ -1,0 +1,24 @@
+{
+  "name": "slack-clapback",
+  "version": "1.0.0",
+  "description": "A slack service to send back a clapback",
+  "main": "index.js",
+  "repository": "https://github.com/mtliendo/slack-clapback.git",
+  "author": "Michael Liendo <model3volution@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "start:dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  }
+}
