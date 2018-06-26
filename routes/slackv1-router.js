@@ -11,7 +11,11 @@ slackv1Router.post('/sassy', (req,res) => {
 
   const  clapbackText = text.trim().toUpperCase().split(' ').map(word => `${word} :clap::skin-tone-5:`).join(' ')
   console.log(clapbackText)
-  res.status(200).send(clapbackText)
+  
+  res.status(200).json({
+    response_type: "ephemeral",
+    text: clapbackText
+  })
 }) 
 
 module.exports = slackv1Router
