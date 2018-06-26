@@ -33,6 +33,7 @@ slackv1Router.get('/auth', (req,res) => {
     console.log(data)
     res.send('success')
   })
+  .catch(e => console.log(e))
 })
 
 module.exports = slackv1Router

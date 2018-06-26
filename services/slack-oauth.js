@@ -13,14 +13,15 @@ const getSlackToken = (creds) => {
    }
 
   const options = {
-    method: 'GET',
+    method: 'post',
     headers: { 'content-type': 'application/x-www-form-urlencoded' },
     data: qs.stringify(data),
     url,
   }
-  
+
   return axios(options)
   .then(res => res.data)
+  .catch(e=> e)
 }
 
 module.exports.getSlackToken = getSlackToken
