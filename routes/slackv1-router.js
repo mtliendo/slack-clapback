@@ -27,7 +27,7 @@ slackv1Router.post('/auth', (req,res) => {
     client_secret: CLIENT_SECRET,
     code: req.query.code
   }
-
+  console.log('in here')
   getSlackToken(creds)
   .then(data => {
     console.log(data)
