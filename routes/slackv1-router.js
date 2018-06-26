@@ -8,12 +8,12 @@ slackv1Router.post('/sassy', (req,res) => {
   // 3. split by internal whitespace
   // 4. append 👏🏾 to the end of each work
   // 5. join back together
-
+  console.log(req.body)
   const  clapbackText = text.trim().toUpperCase().split(' ').map(word => `${word} :clap::skin-tone-5:`).join(' ')
   console.log(clapbackText)
-  
+
   res.status(200).json({
-    response_type: "ephemeral",
+    response_type: "in_channel",
     text: clapbackText
   })
 }) 
