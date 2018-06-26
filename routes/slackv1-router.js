@@ -21,7 +21,7 @@ slackv1Router.post('/sassy', (req,res) => {
   })
 })
 
-slackv1Router.post('/auth', (req,res) => {
+slackv1Router.get('/auth', (req,res) => {
   const creds = {
     client_id: CLIENT_ID,
     client_secret: CLIENT_SECRET,
