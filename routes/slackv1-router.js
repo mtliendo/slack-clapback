@@ -1,5 +1,8 @@
 const express = require('express')
 const slackv1Router = express.Router()
+const {getSlackToken} = require('../services/slack-oauth')
+
+const {CLIENT_ID, CLIENT_SECRET} = process.env
 
 slackv1Router.post('/sassy', (req,res) => {
   const {text} = req.body
@@ -16,6 +19,20 @@ slackv1Router.post('/sassy', (req,res) => {
     response_type: "in_channel",
     text: clapbackText
   })
-}) 
+})
+
+slackv1Router.post('/auth', (req,res) => {
+  const creds = {
+    client_id: CLIENT_ID,
+    client_secret: CLIENT_SECRET,
+    code: req.query.code
+  }
+
+  getSlackToken(creds)
+  .then(data => {
+    console.log(data)
+    res.send('success')
+  })
+})
 
 module.exports = slackv1Router
