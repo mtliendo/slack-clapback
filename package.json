@@ -1,5 +1,6 @@
 {
   "name": "slack-clapback",
+  "homepage": "https://mtliendo.github.io/slack-clapback/",
   "version": "1.0.0",
   "description": "A slack service to send back a clapback",
   "main": "index.js",
