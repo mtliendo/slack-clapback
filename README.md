@@ -1,7 +1,7 @@
 # SLACK CLAPBACK
 
 <p align="center">
-  ADD👏🏾SOME👏🏾SASS👏🏾TO👏🏾YOUR👏🏾SENTENCE!👏🏾
+  <p>ADD👏🏾SOME👏🏾SASS👏🏾TO👏🏾YOUR👏🏾SENTENCE!👏🏾</p>
   <img src='./images/sassy.jpg'/>
 </p>
 
