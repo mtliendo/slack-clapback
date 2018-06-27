@@ -1,8 +1,6 @@
 const axios = require('axios')
 const qs = require('qs')
 
-
-
 const getSlackToken = (creds) => {
 
   const url = 'https://slack.com/api/oauth.access'
