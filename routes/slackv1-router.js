@@ -23,6 +23,7 @@ slackv1Router.get('/auth', (req,res) => {
 
   getSlackToken(creds)
   .then(data => {
+    console.log(data)
     data.token ? 
       res.redirect(200,'https://github.com/mtliendo/slack-clapback') 
     : res.json({error: 'no authentication given'})
