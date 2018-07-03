@@ -13,6 +13,8 @@ slackv1Router.post('/sassy', (req,res) => {
   const timestamp = req.get('X-Slack-Request-Timestamp')
   const baseString = `v0:${timestamp}:${formData}`
   const hmac = crypto.createHmac('sha256', baseString)
+  console.log(formData)
+  console.log(hmac.digest('hex'))
   const clapbackText = clapback(text)
 
   console.log('the hmac value is:', hmac)
