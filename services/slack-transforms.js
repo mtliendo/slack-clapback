@@ -1,3 +1,4 @@
+const FormData = require('form-data')
 module.exports.clapback = function(text) {
   // 1. trim outside whitespace
   // 2. capitalize
