@@ -1,28 +1,27 @@
 const express = require('express')
 const slackv1Router = express.Router()
 const {getSlackToken} = require('../services/slack-oauth')
-const {clapback,getFormData} = require('../services/slack-transforms')
-const crypto = require('crypto')
+const {clapback} = require('../services/slack-transforms')
 
-const {CLIENT_ID, CLIENT_SECRET} = process.env
+const {CLIENT_ID, CLIENT_SECRET, VERIFICATION_TOKEN} = process.env
 
 slackv1Router.post('/sassy', (req,res) => {
   
-  const {text} = req.body
-  const formData = getFormData(req.body)
-  const timestamp = req.get('X-Slack-Request-Timestamp')
-  const baseString = `v0:${timestamp}:${formData}`
-  const hmac = crypto.createHmac('sha256', baseString)
-  console.log(formData)
-  console.log(hmac.digest('hex'))
+  const {text, token} = req.body
   const clapbackText = clapback(text)
 
-  console.log('the hmac value is:', hmac)
+  if(token === VERIFICATION_TOKEN) {
 
-  res.status(200).json({
-    response_type: "in_channel",
-    text: clapbackText
-  })
+    res.status(200).json({
+      response_type: "in_channel",
+      text: clapbackText
+    })
+  }else {
+    res.status(200).json({
+      response_type:'ephemeral',
+      text: 'request not valid'
+    })
+  }
 })
 
 slackv1Router.get('/auth', (req,res) => {

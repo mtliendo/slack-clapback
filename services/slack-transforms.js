@@ -11,9 +11,3 @@ module.exports.clapback = function(text) {
     .map(word => `${word} :clap::skin-tone-5:`)
     .join(' ')
 }
-
-module.exports.getFormData = function getFormData(object) {
-  const formData = new FormData();
-  Object.keys(object).forEach(key => formData.append(key, object[key]));
-  return formData
-}
