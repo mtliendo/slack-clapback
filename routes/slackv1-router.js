@@ -6,7 +6,9 @@ const {clapback} = require('../services/slack-transforms')
 const {CLIENT_ID, CLIENT_SECRET} = process.env
 
 slackv1Router.post('/sassy', (req,res) => {
-  console.log(req.get('the time stamp: X-Slack-Request-Timestamp'))
+
+  console.log(req.get('the time stamp'))
+  console.log(req.get('X-Slack-Request-Timestamp'))
   
   const {text} = req.body
   const clapbackText = clapback(text)
