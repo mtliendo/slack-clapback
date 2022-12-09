@@ -22,7 +22,7 @@
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "form-data": "^2.3.2",
-    "qs": "^6.5.2"
+    "qs": "^6.5.3"
   },
   "devDependencies": {
     "gh-pages": "^1.2.0",
